@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mzansi Eats — Food Delivery</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; }
+
+    header { background: #e63946; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { color: white; margin: 0; font-size: 1.6rem; }
+
+    nav { display: flex; gap: 20px; }
+    nav a { color: white; text-decoration: none; font-size: 14px; }
+
+    .hero { position: relative; }
+    .hero img { width: 1200px; height: 400px; object-fit: cover; display: block; }
+    .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; }
+    .hero-text h2 { font-size: 2.5rem; margin: 0 0 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .hero-text p  { font-size: 1.1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+
+    .menu-section { padding: 40px; }
+    .menu-section h2 { margin-bottom: 24px; font-size: 1.4rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(4, 250px); gap: 24px; }
+
+    .card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+    .card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .card-body { padding: 14px; }
+    .card-body h3 { margin: 0 0 6px; font-size: 15px; }
+    .card-body p  { margin: 0 0 12px; font-size: 13px; color: #777; }
+    .card-body .price { font-weight: bold; color: #e63946; }
+    .card-body button { width: 100%; padding: 8px; background: #e63946; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; margin-top: 10px; }
+
+    .contact { padding: 40px; background: #f9f9f9; }
+    .contact-inner { width: 800px; margin: 0 auto; }
+    .contact h2 { margin-bottom: 20px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; margin-bottom: 12px; box-sizing: border-box; }
+    button[type="submit"] { background: #e63946; color: white; border: none; padding: 10px 28px; border-radius: 6px; cursor: pointer; font-size: 15px; }
+
+    footer { background: #1d1d1d; color: #ccc; padding: 24px 40px; font-size: 13px; display: flex; justify-content: space-between; }
+
+    .fine-print { font-size: 11px; color: #999; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mzansi Eats</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/menu">Menu</a>
+    <a href="/track">Track order</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="images/hero-food.jpg" alt="A spread of South African street food dishes">
+  <div class="hero-text">
+    <h2>Order fresh. Eat happy.</h2>
+    <p>Delivered to your door in under 45 minutes.</p>
+  </div>
+</section>
+
+<section class="menu-section">
+  <h2>Popular dishes</h2>
+  <div class="card-grid">
+
+    <div class="card">
+      <img src="images/bunny-chow.jpg" alt="A bunny chow filled with lamb curry">
+      <div class="card-body">
+        <h3>Lamb Bunny Chow</h3>
+        <p>Traditional Durban quarter loaf with slow-cooked lamb curry</p>
+        <span class="price">R 85</span>
+        <p class="fine-print">Contains gluten, dairy. Spice level: medium.</p>
+        <button>Add to cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/braai-wrap.jpg" alt="A braai meat wrap with sheba sauce">
+      <div class="card-body">
+        <h3>Braai Wrap</h3>
+        <p>Grilled boerewors and chakalaka in a toasted flour wrap</p>
+        <span class="price">R 75</span>
+        <p class="fine-print">Contains gluten. Spice level: mild.</p>
+        <button>Add to cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/pap-stew.jpg" alt="A bowl of pap and oxtail stew">
+      <div class="card-body">
+        <h3>Pap &amp; Oxtail</h3>
+        <p>Creamy maize pap served with slow-braised oxtail stew</p>
+        <span class="price">R 110</span>
+        <p class="fine-print">Gluten free. Spice level: mild.</p>
+        <button>Add to cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/gatsby.jpg" alt="A Gatsby sandwich cut in quarters">
+      <div class="card-body">
+        <h3>Cape Town Gatsby</h3>
+        <p>Slap chips, polony, and atchar in a French loaf</p>
+        <span class="price">R 65</span>
+        <p class="fine-print">Contains gluten. Spice level: medium.</p>
+        <button>Add to cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact">
+  <div class="contact-inner">
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <div>
+        <form action="/contact" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?"></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+      <div>
+        <h3>Contact details</h3>
+        <p>hello@mzansieats.co.za</p>
+        <p>021 555 0192</p>
+        <p>14 Buitenkant Street, Cape Town, 8001</p>
+        <h3>Operating hours</h3>
+        <ul>
+          <li>Mon–Fri: 10:00 – 22:00</li>
+          <li>Sat–Sun: 09:00 – 23:00</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2025 Mzansi Eats (Pty) Ltd</span>
+  <span>Delivery available in Cape Town, Johannesburg &amp; Durban</span>
+</footer>
+
+</body>
+</html>
